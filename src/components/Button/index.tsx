@@ -11,3 +11,5 @@ const Button = ({ text, type, handleClick, classN }: IButton) => {
     </button>
   )
 }
+
+export default Button;
