@@ -1,5 +1,5 @@
-import axios from "axios";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import Button from "../../components/Button";
 import Input from "../../components/Input";
@@ -7,33 +7,31 @@ import AppContext from "../../context/appContext";
 import httpRequest from "../../utils/httpRequest";
 
 const Login = () => {
-  const { username, setUsername, password, setPassword } = useContext(AppContext);
+  const { email, setEmail, password, setPassword, setIsLogged, isLogged } = useContext(AppContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isLogged) {
+      navigate('/home');
+    }
+  }, [isLogged]);
 
   const handleLogin = async () => {
-    const request = await httpRequest(
-      "POST",
-      {
-        "Content-Type": "application/json",
-        "Accept": "application/json",
-        "Access-Control-Allow-Origin": "*"
-      },
-      "http://localhost:3001/login",
-      { "data":{ username, password } }
-      );
+    const request = await httpRequest('http://localhost:3001')
+    .post("/user/signin", { email, password });
 
-    // console.log(request);
-    // axios.post("http://localhost:3001/login", { data: { username, password } }, { headers: {
-    //   "Content-Type": "*",
-    //   "Accept": "*",
-    //   "Access-Control-Allow-Origin": "*"
-    // } })
+    if (request.status === 200) {
+      setIsLogged(true);
+      localStorage.setItem("token", request.data.token);
+    }
+
   };
 
   return(
     <form>
       <Input
         type={"email"}
-        handleChange={(e) => setUsername(e.target.value)}
+        handleChange={(e) => setEmail(e.target.value)}
         placeholder={"Email"}
         classN={"input"}
       />

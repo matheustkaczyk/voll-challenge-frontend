@@ -1,11 +1,8 @@
 import axios from 'axios';
 
-const httpRequest = async (method: string, headers: any, url: string, data: any) => {
-  return await axios({
-    method,
-    headers,
-    url,
-    data
+const httpRequest = (url: string) => {
+  return axios.create({
+    baseURL: url,
   })
 };
 

@@ -1,8 +1,8 @@
 import React from 'react';
 
 interface IdefaultValue {
-  username: string;
-  setUsername: React.Dispatch<React.SetStateAction<string>>;
+  email: string;
+  setEmail: React.Dispatch<React.SetStateAction<string>>;
   password: string;
   setPassword: React.Dispatch<React.SetStateAction<string>>;
   isLogged: boolean;
