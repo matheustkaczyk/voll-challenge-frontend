@@ -4,6 +4,11 @@ import AppContext from "./appContext"
 const Provider = (props: any) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [newUser, setNewUser] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
   const [isLogged, setIsLogged] = useState(false);
 
   let value = {
@@ -12,7 +17,9 @@ const Provider = (props: any) => {
     password,
     setPassword,
     isLogged,
-    setIsLogged
+    setIsLogged,
+    newUser,
+    setNewUser
   };
 
   return(
