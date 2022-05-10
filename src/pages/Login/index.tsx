@@ -1,7 +1,12 @@
+import { useContext } from "react";
+
 import Button from "../../components/Button";
 import Input from "../../components/Input";
+import AppContext from "../../context/appContext";
 
 const Login = () => {
+  const { setUsername, setPassword } = useContext(AppContext);
+  
   return(
     <form>
       <Input

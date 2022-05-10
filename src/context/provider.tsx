@@ -1,11 +1,18 @@
+import { useState } from "react";
 import AppContext from "./appContext"
 
 const Provider = (props: any) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [isLogged, setIsLogged] = useState(false);
 
   let value = {
-    username: '',
-    password: '',
-    isLogged: false,
+    username,
+    setUsername,
+    password,
+    setPassword,
+    isLogged,
+    setIsLogged
   };
   
   return(
