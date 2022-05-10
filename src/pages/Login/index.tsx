@@ -2,7 +2,7 @@ import Input from "../../components/Input";
 
 const Login = () => {
   return(
-    <div>
+    <form>
       <Input
         type={"text"}
         handleChange={() => {}}
@@ -15,7 +15,7 @@ const Login = () => {
         placeholder={"Password"}
         classN={"input"}
       />
-    </div>
+    </form>
   )
 }
 
