@@ -10,3 +10,5 @@ const Input = ({ type, handleChange, placeholder, classN }: IInput) => {
     />
   )
 }
+
+export default Input;
