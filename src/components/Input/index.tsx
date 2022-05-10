@@ -1,4 +1,6 @@
-const Input = ({ type, handleChange, placeholder, classN }) => {
+import { IInput } from "./input.interface"
+
+const Input = ({ type, handleChange, placeholder, classN }: IInput) => {
   return(
     <input
       type={type}
