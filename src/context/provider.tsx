@@ -14,7 +14,7 @@ const Provider = (props: any) => {
     isLogged,
     setIsLogged
   };
-  
+
   return(
     <AppContext.Provider value={value}>
       {props.children}
