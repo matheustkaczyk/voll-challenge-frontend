@@ -18,6 +18,7 @@ const Provider = (props: any) => {
     role: '',
   });
   const [products, setProducts] = useState([{
+    _id: '',
     createdAt: '',
     description: '',
     img_url: '',
@@ -26,15 +27,7 @@ const Provider = (props: any) => {
     stock: 0,
     updatedAt: '',
   }]);
-  const [cartProducts, setCartProducts] = useState([{
-    createdAt: '',
-    description: '',
-    img_url: '',
-    name: '',
-    price: 0,
-    stock: 0,
-    updatedAt: '',
-  }]);
+  const [cartProducts, setCartProducts] = useState([]);
   const [isLogged, setIsLogged] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
 

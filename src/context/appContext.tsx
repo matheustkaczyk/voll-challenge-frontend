@@ -16,6 +16,7 @@ export type userInfo = {
 };
 
 export interface productsInfo {
+  _id: string;
   createdAt: string;
   description: string;
   img_url: string;
@@ -23,6 +24,15 @@ export interface productsInfo {
   price: number;
   stock: number;
   updatedAt: string;
+}
+
+export type productCart = {
+  _id: string;
+  description: string;
+  name: string;
+  price: number;
+  stock: number;
+  quantity: number;
 }
 
 interface IdefaultValue {
@@ -40,6 +50,8 @@ interface IdefaultValue {
   setLoggedUserInfo: React.Dispatch<React.SetStateAction<any>>;
   products: productsInfo[];
   setProducts: React.Dispatch<React.SetStateAction<any>>;
+  cartProducts: productCart[];
+  setCartProducts: React.Dispatch<React.SetStateAction<any>>;
 } 
 
 const AppContext = React.createContext({} as IdefaultValue);

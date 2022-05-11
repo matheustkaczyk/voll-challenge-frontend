@@ -7,7 +7,12 @@ import AppContext, { userInfo } from '../../context/appContext';
 import httpRequest from '../../utils/httpRequest';
 
 const Home = () => {
-  const { loggedUserInfo, setLoggedUserInfo, products, setProducts } = useContext(AppContext);
+  const {
+    loggedUserInfo,
+    setLoggedUserInfo,
+    products,
+    setProducts,
+  } = useContext(AppContext);
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
 
@@ -56,6 +61,7 @@ const Home = () => {
         { products.length > 0 && products.map((product) => {
           return <Card
             key={product.name}
+            _id={product._id}
             name={product.name}
             description={product.description}
             price={product.price}
