@@ -25,7 +25,7 @@ const Signin = () => {
   }, [isLogged]);
 
   const handleLogin = async () => {
-    const request = await httpRequest('http://localhost:3001')
+    const request = await httpRequest()
     .post("/auth/signin", { email, password });
 
     if (request.status === 200) {

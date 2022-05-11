@@ -11,7 +11,7 @@ const Signup = () => {
   const navigation = useNavigate();
 
   const handleSignup = async () => {
-    const request = await httpRequest('http://localhost:3001')
+    const request = await httpRequest()
     .post("/auth/signup", newUser);
 
     if (request.status === 201) return navigation('/login/signin');

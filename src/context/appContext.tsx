@@ -4,7 +4,18 @@ export type newUser  = {
   name: string;
   email: string;
   password: string;
-}
+};
+
+export type requestUserInfo = {
+  _doc: {
+    _id: string;
+    balance: number;
+    created_at: string;
+    email: string;
+    name: string;
+    role: string;
+  };
+};
 
 interface IdefaultValue {
   email: string;
@@ -17,8 +28,8 @@ interface IdefaultValue {
   setNewUser: React.Dispatch<React.SetStateAction<newUser>>;
   isAdmin: boolean;
   setIsAdmin: React.Dispatch<React.SetStateAction<boolean>>;
-  loggedUserInfo: object;
-  setLoggedUserInfo: React.Dispatch<React.SetStateAction<object>>;
+  loggedUserInfo: any;
+  setLoggedUserInfo: React.Dispatch<React.SetStateAction<any>>;
 } 
 
 const AppContext = React.createContext({} as IdefaultValue);

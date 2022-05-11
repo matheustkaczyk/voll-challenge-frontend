@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const httpRequest = (url: string) => {
+const httpRequest = () => {
   return axios.create({
-    baseURL: url,
+    baseURL: 'http://localhost:3001',
   })
 };
 
