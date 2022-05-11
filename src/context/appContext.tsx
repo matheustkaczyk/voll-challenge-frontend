@@ -6,15 +6,13 @@ export type newUser  = {
   password: string;
 };
 
-export type requestUserInfo = {
-  _doc: {
-    _id: string;
-    balance: number;
-    created_at: string;
-    email: string;
-    name: string;
-    role: string;
-  };
+export type userInfo = {
+  _id: string;
+  balance: number;
+  created_at: string;
+  email: string;
+  name: string;
+  role: string;
 };
 
 interface IdefaultValue {
@@ -28,7 +26,7 @@ interface IdefaultValue {
   setNewUser: React.Dispatch<React.SetStateAction<newUser>>;
   isAdmin: boolean;
   setIsAdmin: React.Dispatch<React.SetStateAction<boolean>>;
-  loggedUserInfo: any;
+  loggedUserInfo: userInfo;
   setLoggedUserInfo: React.Dispatch<React.SetStateAction<any>>;
 } 
 

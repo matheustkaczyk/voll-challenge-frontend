@@ -1,7 +1,8 @@
 import { useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Header from '../../components/Header';
 
-import AppContext, { requestUserInfo } from '../../context/appContext';
+import AppContext, { userInfo } from '../../context/appContext';
 import httpRequest from '../../utils/httpRequest';
 
 const Home = () => {
@@ -20,16 +21,23 @@ const Home = () => {
       const { data } = await httpRequest()
       .get('/user', { headers: { Authorization: token } });
 
-      setLoggedUserInfo(data.data as requestUserInfo);
+      setLoggedUserInfo(data.data as userInfo);
     }
 
     fetchUser();
   }, []);
 
   return(
-    <div>
-      home
-    </div>
+    <main>
+      <Header
+        name={loggedUserInfo.name}
+        balance={loggedUserInfo.balance}
+        _id={loggedUserInfo._id}
+        created_at={loggedUserInfo.created_at}
+        email={loggedUserInfo.email}
+        role={loggedUserInfo.role}
+      />
+    </main>
   )
 }
 
