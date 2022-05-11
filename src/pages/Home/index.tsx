@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Card from '../../components/Card';
 import Header from '../../components/Header';
 
-import AppContext, { productsInfo, userInfo } from '../../context/appContext';
+import AppContext, { userInfo } from '../../context/appContext';
 import httpRequest from '../../utils/httpRequest';
 
 const Home = () => {

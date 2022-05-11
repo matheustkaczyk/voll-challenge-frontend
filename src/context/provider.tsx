@@ -26,6 +26,15 @@ const Provider = (props: any) => {
     stock: 0,
     updatedAt: '',
   }]);
+  const [cartProducts, setCartProducts] = useState([{
+    createdAt: '',
+    description: '',
+    img_url: '',
+    name: '',
+    price: 0,
+    stock: 0,
+    updatedAt: '',
+  }]);
   const [isLogged, setIsLogged] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
 
@@ -43,7 +52,9 @@ const Provider = (props: any) => {
     loggedUserInfo,
     setLoggedUserInfo,
     products,
-    setProducts
+    setProducts,
+    cartProducts,
+    setCartProducts
   };
 
   return(
