@@ -9,6 +9,7 @@ const Provider = (props: any) => {
     email: "",
     password: "",
   });
+  const [loggedUserInfo, setLoggedUserInfo] = useState({});
   const [isLogged, setIsLogged] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
 
@@ -23,6 +24,8 @@ const Provider = (props: any) => {
     setNewUser,
     isAdmin,
     setIsAdmin,
+    loggedUserInfo,
+    setLoggedUserInfo
   };
 
   return(

@@ -17,6 +17,8 @@ interface IdefaultValue {
   setNewUser: React.Dispatch<React.SetStateAction<newUser>>;
   isAdmin: boolean;
   setIsAdmin: React.Dispatch<React.SetStateAction<boolean>>;
+  loggedUserInfo: object;
+  setLoggedUserInfo: React.Dispatch<React.SetStateAction<object>>;
 } 
 
 const AppContext = React.createContext({} as IdefaultValue);
