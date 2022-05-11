@@ -15,7 +15,7 @@ export type userInfo = {
   role: string;
 };
 
-export type productsInfo = {
+export interface productsInfo {
   createdAt: string;
   description: string;
   img_url: string;
@@ -38,7 +38,7 @@ interface IdefaultValue {
   setIsAdmin: React.Dispatch<React.SetStateAction<boolean>>;
   loggedUserInfo: userInfo;
   setLoggedUserInfo: React.Dispatch<React.SetStateAction<any>>;
-  products: productsInfo;
+  products: productsInfo[];
   setProducts: React.Dispatch<React.SetStateAction<any>>;
 } 
 

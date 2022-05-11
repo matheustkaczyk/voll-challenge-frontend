@@ -1,5 +1,6 @@
 import { useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Card from '../../components/Card';
 import Header from '../../components/Header';
 
 import AppContext, { productsInfo, userInfo } from '../../context/appContext';
@@ -34,7 +35,7 @@ const Home = () => {
       const products = await httpRequest()
       .get('/products', { headers: { Authorization: token } });
 
-      setProducts(products);
+      setProducts(products.data);
     };
 
     fetchProducts();
@@ -52,7 +53,18 @@ const Home = () => {
         role={loggedUserInfo.role}
       />
       <>
-
+        { products.length > 0 && products.map((product) => {
+          return <Card
+            key={product.name}
+            name={product.name}
+            description={product.description}
+            price={product.price}
+            stock={product.stock}
+            img_url={product.img_url}
+            createdAt={product.createdAt}
+            updatedAt={product.updatedAt}
+          />
+        }) }
       </>
     </main>
   )
