@@ -1,9 +1,9 @@
 import React from 'react';
 
 export type newUser  = {
-  name?: string;
-  email?: string;
-  password?: string;
+  name: string;
+  email: string;
+  password: string;
 }
 
 interface IdefaultValue {
@@ -13,7 +13,7 @@ interface IdefaultValue {
   setPassword: React.Dispatch<React.SetStateAction<string>>;
   isLogged: boolean;
   setIsLogged: React.Dispatch<React.SetStateAction<boolean>>;
-  newUser: React.Dispatch<React.SetStateAction<newUser>>;
+  newUser: newUser;
   setNewUser: React.Dispatch<React.SetStateAction<newUser>>;
 }
 
