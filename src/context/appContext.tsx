@@ -15,6 +15,16 @@ export type userInfo = {
   role: string;
 };
 
+export type productsInfo = {
+  createdAt: string;
+  description: string;
+  img_url: string;
+  name: string;
+  price: number;
+  stock: number;
+  updatedAt: string;
+}
+
 interface IdefaultValue {
   email: string;
   setEmail: React.Dispatch<React.SetStateAction<string>>;
@@ -28,6 +38,8 @@ interface IdefaultValue {
   setIsAdmin: React.Dispatch<React.SetStateAction<boolean>>;
   loggedUserInfo: userInfo;
   setLoggedUserInfo: React.Dispatch<React.SetStateAction<any>>;
+  products: productsInfo;
+  setProducts: React.Dispatch<React.SetStateAction<productsInfo>>;
 } 
 
 const AppContext = React.createContext({} as IdefaultValue);

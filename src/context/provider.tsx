@@ -9,7 +9,23 @@ const Provider = (props: any) => {
     email: "",
     password: "",
   });
-  const [loggedUserInfo, setLoggedUserInfo] = useState({});
+  const [loggedUserInfo, setLoggedUserInfo] = useState({
+    _id: '',
+    balance: 0,
+    created_at: '',
+    email: '',
+    name: '',
+    role: '',
+  });
+  const [products, setProducts] = useState({
+    createdAt: '',
+    description: '',
+    img_url: '',
+    name: '',
+    price: 0,
+    stock: 0,
+    updatedAt: '',
+  });
   const [isLogged, setIsLogged] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
 
@@ -25,7 +41,9 @@ const Provider = (props: any) => {
     isAdmin,
     setIsAdmin,
     loggedUserInfo,
-    setLoggedUserInfo
+    setLoggedUserInfo,
+    products,
+    setProducts
   };
 
   return(

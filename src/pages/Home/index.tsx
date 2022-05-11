@@ -8,10 +8,10 @@ import httpRequest from '../../utils/httpRequest';
 const Home = () => {
   const { loggedUserInfo, setLoggedUserInfo } = useContext(AppContext);
   const navigate = useNavigate();
+  const token = localStorage.getItem('token');
 
   useEffect(() => {
     const fetchUser = async () => {
-      const token = localStorage.getItem('token');
 
       if (!token) {
         navigate('/signin');
@@ -22,8 +22,22 @@ const Home = () => {
       .get('/user', { headers: { Authorization: token } });
 
       setLoggedUserInfo(data.data as userInfo);
-    }
+    };
 
+    const fetchProducts = async () => {
+
+      if (!token) {
+        navigate('/signin');
+        return;
+      }
+
+      const products = await httpRequest()
+      .get('/products', { headers: { Authorization: token } });
+
+      console.log(products);
+    };
+
+    fetchProducts();
     fetchUser();
   }, []);
 
@@ -37,6 +51,9 @@ const Home = () => {
         email={loggedUserInfo.email}
         role={loggedUserInfo.role}
       />
+      <>
+
+      </>
     </main>
   )
 }
