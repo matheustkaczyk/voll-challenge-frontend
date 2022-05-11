@@ -5,7 +5,7 @@ const Header = ({ name, balance, role }: userInfo) => {
   const navigate = useNavigate();
 
   const handleRedirect = () => {
-    navigate('/manage');
+    navigate('/manager');
     return;
   }
 

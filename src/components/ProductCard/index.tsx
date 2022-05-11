@@ -4,7 +4,7 @@ import AppContext, { productsInfo } from "../../context/appContext";
 import Button from "../Button";
 import Input from "../Input";
 
-const Card = ({ _id, name, description, price, stock, img_url, createdAt, updatedAt }: productsInfo) => {
+const ProductCard = ({ _id, name, description, price, stock, img_url, createdAt, updatedAt }: productsInfo) => {
   const { cartProducts, setCartProducts } = useContext(AppContext);
   const [quantity, setQuantity] = useState(Number(1));
   const [thisProduct, setThisProduct] = useState({
@@ -65,4 +65,4 @@ const Card = ({ _id, name, description, price, stock, img_url, createdAt, update
   )
 }
 
-export default Card;
+export default ProductCard;

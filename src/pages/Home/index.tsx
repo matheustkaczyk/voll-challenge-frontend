@@ -1,6 +1,6 @@
 import { useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Card from '../../components/Card';
+import ProductCard from '../../components/ProductCard';
 import Header from '../../components/Header';
 
 import AppContext, { userInfo } from '../../context/appContext';
@@ -59,7 +59,7 @@ const Home = () => {
       />
       <>
         { products.length > 0 && products.map((product) => {
-          return <Card
+          return <ProductCard
             key={product.name}
             _id={product._id}
             name={product.name}
