@@ -4,6 +4,7 @@ import AppContext, { userInfo } from '../../context/appContext';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 import httpRequest from '../../utils/httpRequest';
+import UserCard from '../../components/UserCard';
 
 const Manager = () => {
   const [users, setUsers] = useState<userInfo[]>([]);
@@ -40,7 +41,18 @@ const Manager = () => {
         <section>
           <h4>Moedas</h4>
           <div>
-
+            { users.length > 0 && users.map((user) => {
+              return <UserCard
+                key={user._id}
+                _id={user._id}
+                name={user.name}
+                email={user.email}
+                balance={user.balance}
+                role={user.role}
+                created_at={user.created_at}
+              />
+            })
+            }
           </div>
           <div>
 

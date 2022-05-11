@@ -19,16 +19,16 @@ const UserCard = ({ _id, name, email, balance, role }: userInfo) => {
     }
 
     if (operation === '') {
-      alert('Selecione uma operação');
+      return alert('Selecione uma operação');
     }
 
     const request = await httpRequest()
-      .post(`/user/currency`, { name, email, currency: `${operation}${currency}` }, { headers: { Authorization: token } });
+      .patch(`/user/currency`, { name, email, currency: `${operation}${currency}` }, { headers: { Authorization: token } });
     
-    if (request.data.status === 200) {
-      alert('Operação realizada com sucesso!');
+    if (request.status === 200) {
+      return alert('Operação realizada com sucesso!');
     } else {
-      alert('Erro ao realizar operação!');
+      return alert('Erro ao realizar operação!');
     }
   }
 
