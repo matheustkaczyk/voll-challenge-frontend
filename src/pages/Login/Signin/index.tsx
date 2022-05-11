@@ -26,11 +26,11 @@ const Signin = () => {
 
   const handleLogin = async () => {
     const request = await httpRequest('http://localhost:3001')
-    .post("/user/signin", { email, password });
+    .post("/auth/signin", { email, password });
 
     if (request.status === 200) {
-      setIsLogged(true);
       localStorage.setItem("token", request.data.token);
+      setIsLogged(true);
     }
   };
 

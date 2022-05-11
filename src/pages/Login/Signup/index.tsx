@@ -12,7 +12,7 @@ const Signup = () => {
 
   const handleSignup = async () => {
     const request = await httpRequest('http://localhost:3001')
-    .post("/user/signup", newUser);
+    .post("/auth/signup", newUser);
 
     if (request.status === 201) return navigation('/login/signin');
   }
