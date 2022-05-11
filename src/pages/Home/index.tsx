@@ -2,11 +2,11 @@ import { useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../../components/Header';
 
-import AppContext, { userInfo } from '../../context/appContext';
+import AppContext, { productsInfo, userInfo } from '../../context/appContext';
 import httpRequest from '../../utils/httpRequest';
 
 const Home = () => {
-  const { loggedUserInfo, setLoggedUserInfo } = useContext(AppContext);
+  const { loggedUserInfo, setLoggedUserInfo, products, setProducts } = useContext(AppContext);
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
 
@@ -34,7 +34,7 @@ const Home = () => {
       const products = await httpRequest()
       .get('/products', { headers: { Authorization: token } });
 
-      console.log(products);
+      setProducts(products);
     };
 
     fetchProducts();

@@ -39,7 +39,7 @@ interface IdefaultValue {
   loggedUserInfo: userInfo;
   setLoggedUserInfo: React.Dispatch<React.SetStateAction<any>>;
   products: productsInfo;
-  setProducts: React.Dispatch<React.SetStateAction<productsInfo>>;
+  setProducts: React.Dispatch<React.SetStateAction<any>>;
 } 
 
 const AppContext = React.createContext({} as IdefaultValue);
