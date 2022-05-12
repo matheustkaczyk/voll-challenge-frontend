@@ -3,10 +3,11 @@ import { useNavigate } from "react-router-dom";
 import AppContext, { userInfo } from "../../context/appContext";
 import httpRequest from "../../utils/httpRequest";
 import Button from "../Button";
+import Input from "../Input";
 import ProductCard from "../ProductCard";
 
 const Header = ({ name, balance, role }: userInfo) => {
-  const { cartProducts, loggedUserInfo } = useContext(AppContext);
+  const { cartProducts, loggedUserInfo, setProductsFilter } = useContext(AppContext);
   const [checkout, setCheckout] = useState(false);
   const navigate = useNavigate();
 
@@ -37,10 +38,18 @@ const Header = ({ name, balance, role }: userInfo) => {
 
   return(
     <header>
-      <h2>{name}</h2>
-      <h2>{balance}</h2>
-      { role === 'admin' && <h2 onClick={() => handleRedirect()}>Gerenciar</h2> }
-      <h2 onClick={() => handleOpen()}>Carrinho {cartProducts.length}</h2>
+      <div>
+        <h2>{name}</h2>
+        <h2>Pontos: {balance}</h2>
+        { role === 'admin' && <h2 className="admin" onClick={() => handleRedirect()}>Gerenciar</h2> }
+      </div>
+      <Input
+        type="text"
+        placeholder="Buscar produto"
+        classN="search"
+        handleChange={(e) => setProductsFilter(e.target.value)}
+      />
+      <h2 className="cart" onClick={() => handleOpen()}>Carrinho: {cartProducts.length}</h2>
       {
         checkout && 
         <aside>

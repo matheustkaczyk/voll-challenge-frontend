@@ -12,6 +12,7 @@ const Home = () => {
     setLoggedUserInfo,
     products,
     setProducts,
+    productsFilter,
   } = useContext(AppContext);
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
@@ -58,7 +59,7 @@ const Home = () => {
         role={loggedUserInfo.role}
       />
       <>
-        { products.length > 0 && products.map((product) => {
+        { products.length > 0 && products.filter((item) => item.name.includes(productsFilter)).map((product) => {
           return <ProductCard
             key={product.name}
             _id={product._id}

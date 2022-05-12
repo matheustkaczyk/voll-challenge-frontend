@@ -6,8 +6,8 @@ import Signup from './pages/Login/Signup';
 import Provider from './context/provider';
 import Home from './pages/Home';
 import Manager from './pages/Manager';
-import Checkout from './pages/Checkout';
-import './index.scss'
+import './index.scss';
+import './App.scss';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

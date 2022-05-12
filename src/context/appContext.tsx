@@ -53,6 +53,8 @@ interface IdefaultValue {
   setProducts: React.Dispatch<React.SetStateAction<any>>;
   cartProducts: productCart[];
   setCartProducts: React.Dispatch<React.SetStateAction<any>>;
+  productsFilter: string;
+  setProductsFilter: React.Dispatch<React.SetStateAction<string>>;
 } 
 
 const AppContext = React.createContext({} as IdefaultValue);

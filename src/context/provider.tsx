@@ -30,6 +30,7 @@ const Provider = (props: any) => {
   const [cartProducts, setCartProducts] = useState([]);
   const [isLogged, setIsLogged] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [productsFilter, setProductsFilter] = useState('');
 
   let value = {
     email,
@@ -47,7 +48,9 @@ const Provider = (props: any) => {
     products,
     setProducts,
     cartProducts,
-    setCartProducts
+    setCartProducts,
+    productsFilter,
+    setProductsFilter
   };
 
   return(
