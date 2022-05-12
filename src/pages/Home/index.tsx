@@ -69,8 +69,8 @@ const Home = () => {
             img_url={product.img_url}
             createdAt={product.createdAt}
             updatedAt={product.updatedAt}
-          />
-        }) }
+          /> })
+        }
       </>
     </main>
   )

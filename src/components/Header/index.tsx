@@ -14,7 +14,7 @@ const Header = ({ name, balance, role }: userInfo) => {
   }
 
   const handleCheckout = () => {
-    // return navigate('/checkout');
+    setCheckout(!checkout);
   }
 
   return(
@@ -28,17 +28,13 @@ const Header = ({ name, balance, role }: userInfo) => {
         <aside>
           <h2>Checkout</h2>
           <h2>Total: {cartProducts.reduce((acc, item) => acc + (item.quantity * item.price), 0)}</h2>
-          { cartProducts.map(item => {
-            return <ProductCard
-              key={item._id}
-              _id={item._id}
-              name={item.name}
-              description={item.description}
-              price={item.price}
-              stock={item.stock}
-              quantity={item.quantity}
-            />
-            })
+          { cartProducts.length > 0 && cartProducts.map(item => {
+            return <div key={item.name}>
+              <h4>{item.name}</h4>
+              <h5>{item.price}</h5>
+              <h5>{item.quantity}</h5>
+            </div>
+          })
           }
         <Button
           type={"button"}
