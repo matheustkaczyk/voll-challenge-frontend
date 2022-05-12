@@ -6,6 +6,7 @@ import Signup from './pages/Login/Signup';
 import Provider from './context/provider';
 import Home from './pages/Home';
 import Manager from './pages/Manager';
+import Checkout from './pages/Checkout';
 import './index.scss'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Route path="/signin" element={<Signin/>}/>
           <Route path="/signup" element={<Signup/>}/>
           <Route path="/home" element={<Home />} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="/manager" element={<Manager />} />
         </Routes>
       </Provider>

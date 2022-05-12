@@ -18,26 +18,15 @@ const ProductCard = ({ _id, name, description, price, stock, img_url, createdAt,
   });
 
   const handleBuy = () => {
-    // const cart = [...cartProducts];
+    const cart = [...cartProducts];
+    const index = cart.findIndex(item => item._id === thisProduct._id);
+    if (index !== -1) {
+      cart[index].quantity += quantity;
+    } else {
+      cart.push({ ...thisProduct });
+    }
 
-    // if (cart.length > 0) {
-    //   cart.map((item, index) => {
-    //     console.log(item);
-    //       console.log(item._id === thisProduct._id)
-    //       if (item._id === thisProduct._id) {
-    //         console.log(item, item._id)
-    //         cart[index].quantity += quantity;
-    //         return false;
-    //       } else {
-    //         cart.push(thisProduct);
-    //         return false;
-    //       }
-    //   })
-    // } else {
-    //   cart.push({...thisProduct});
-    // }
-    // console.log(cart);
-    // setCartProducts(cart);
+    setCartProducts(cart);
   }
 
   return(
