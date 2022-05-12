@@ -19,11 +19,12 @@ export interface productsInfo {
   _id: string;
   createdAt?: string;
   description: string;
-  img_url: string;
+  img_url?: string;
   name: string;
   price: number;
   stock: number;
   updatedAt?: string;
+  quantity?: number;
 }
 
 export type productCart = {
