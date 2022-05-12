@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AppContext, { userInfo } from "../../context/appContext";
+import httpRequest from "../../utils/httpRequest";
 import Button from "../Button";
 import ProductCard from "../ProductCard";
 
@@ -9,12 +10,31 @@ const Header = ({ name, balance, role }: userInfo) => {
   const [checkout, setCheckout] = useState(false);
   const navigate = useNavigate();
 
+  const token = localStorage.getItem("token");
+
   const handleRedirect = () => {
     return navigate('/manager');
   }
 
-  const handleCheckout = () => {
+  const handleOpen = () => {
     setCheckout(!checkout);
+  }
+
+  const handleCheckout = async () => {
+    if (!token) {
+      return navigate("/signin");
+    }
+
+    const request = await httpRequest()
+    .post('/sale', { products: cartProducts }, { headers: { Authorization: token } });
+
+    console.log(request);
+
+    if (request.status === 201) {
+      return alert('Pedido efetuado com sucesso!');
+    } else {
+      return alert('Erro ao efetuar pedido, verifique se o seu saldo é suficiente');
+    }
   }
 
   return(
@@ -22,7 +42,7 @@ const Header = ({ name, balance, role }: userInfo) => {
       <h2>{name}</h2>
       <h2>{balance}</h2>
       { role === 'admin' && <h2 onClick={() => handleRedirect()}>Gerenciar</h2> }
-      <h2 onClick={() => handleCheckout()}>Carrinho {cartProducts.length}</h2>
+      <h2 onClick={() => handleOpen()}>Carrinho {cartProducts.length}</h2>
       {
         checkout && 
         <aside>
@@ -39,7 +59,7 @@ const Header = ({ name, balance, role }: userInfo) => {
         <Button
           type={"button"}
           text={"Finalizar compra"}
-          handleClick={() => {}}
+          handleClick={() => handleCheckout()}
           classN={"button"}
         />
         </aside>
