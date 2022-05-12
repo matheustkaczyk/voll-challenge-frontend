@@ -6,7 +6,7 @@ import Button from "../Button";
 import ProductCard from "../ProductCard";
 
 const Header = ({ name, balance, role }: userInfo) => {
-  const { cartProducts } = useContext(AppContext);
+  const { cartProducts, loggedUserInfo } = useContext(AppContext);
   const [checkout, setCheckout] = useState(false);
   const navigate = useNavigate();
 
@@ -26,9 +26,7 @@ const Header = ({ name, balance, role }: userInfo) => {
     }
 
     const request = await httpRequest()
-    .post('/sale', { products: cartProducts }, { headers: { Authorization: token } });
-
-    console.log(request);
+    .post('/sale', { products: cartProducts, user: loggedUserInfo }, { headers: { Authorization: token } });
 
     if (request.status === 201) {
       return alert('Pedido efetuado com sucesso!');
