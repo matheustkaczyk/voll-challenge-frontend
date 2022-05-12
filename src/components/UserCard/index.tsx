@@ -22,6 +22,10 @@ const UserCard = ({ _id, name, email, balance, role }: userInfo) => {
       return alert('Selecione uma operação');
     }
 
+    if (currency === '0') {
+      return alert('Quantidade não pode ser zero');
+    }
+
     const request = await httpRequest()
       .patch(`/user/currency`, { name, email, currency: `${operation}${currency}` }, { headers: { Authorization: token } });
     
@@ -49,6 +53,7 @@ const UserCard = ({ _id, name, email, balance, role }: userInfo) => {
             placeholder="Quantidade de moedas"
             classN="input"
             handleChange={(e) => setCurrency(e.target.value)}
+            min={0}
           />
           <Button
             type="button"
