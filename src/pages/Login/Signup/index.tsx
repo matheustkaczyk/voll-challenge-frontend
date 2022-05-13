@@ -18,32 +18,40 @@ const Signup = () => {
   }
 
   return(
-    <form>
-        <Input
-          type={"text"}
-          handleChange={(e) => setNewUser({ ...newUser, name: e.target.value})}
-          placeholder={"Name"}
-          classN={"input"}
-        />
-        <Input
-          type={"email"}
-          handleChange={(e) => setNewUser({ ...newUser, email: e.target.value})}
-          placeholder={"Email"}
-          classN={"input"}
-        />
-        <Input
-          type={"password"}
-          handleChange={(e) => setNewUser({ ...newUser, password: e.target.value})}
-          placeholder={"Password"}
-          classN={"input"}
-        />
-        <Button
-          handleClick={() => handleSignup()}
-          classN={"button"}
-          text={"Cadastrar"}
-          type="button"
-        />
-      </form>
+    <div className="login">
+      <div className="login-div">
+        <form>
+            <Input
+              type={"text"}
+              handleChange={(e) => setNewUser({ ...newUser, name: e.target.value})}
+              placeholder={"Name"}
+              classN={"input"}
+            />
+            <Input
+              type={"email"}
+              handleChange={(e) => setNewUser({ ...newUser, email: e.target.value})}
+              placeholder={"Email"}
+              classN={"input"}
+            />
+            <Input
+              type={"password"}
+              handleChange={(e) => setNewUser({ ...newUser, password: e.target.value})}
+              placeholder={"Password"}
+              classN={"input"}
+            />
+          </form>
+          <div className="btns">
+            <Button
+              handleClick={() => handleSignup()}
+              classN={"button"}
+              text={"Cadastrar"}
+              type="button"
+            />
+          </div>
+      </div>
+        <div className="img-login">
+        </div>
+    </div>
   )
 }
 
