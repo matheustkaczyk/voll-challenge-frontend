@@ -9,7 +9,7 @@ import { AiOutlineShoppingCart, AiOutlineUser, AiOutlineLogout } from 'react-ico
 import coin from '../../coin.svg';
 
 const Header = ({ name, balance, role }: userInfo) => {
-  const { cartProducts, loggedUserInfo, setProductsFilter } = useContext(AppContext);
+  const { cartProducts, loggedUserInfo, setProductsFilter, setIsLogged, setIsAdmin } = useContext(AppContext);
   const [checkout, setCheckout] = useState(false);
 
   const navigate = useNavigate();
@@ -39,8 +39,10 @@ const Header = ({ name, balance, role }: userInfo) => {
     }
   }
 
-  const handleLogout = async () => {
+  const handleLogout = () => {
     localStorage.removeItem("token");
+    setIsLogged(false);
+    setIsAdmin(false);
     return navigate("/signin");
   }
 

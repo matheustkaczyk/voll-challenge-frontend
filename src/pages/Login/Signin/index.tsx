@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Button from "../../../components/Button";
@@ -35,36 +35,40 @@ const Signin = () => {
   };
 
   return(
-    <>
-      <form>
-        <Input
-          type={"email"}
-          handleChange={(e) => setEmail(e.target.value)}
-          placeholder={"Email"}
-          classN={"input"}
-        />
-        <Input
-          type={"password"}
-          handleChange={(e) => setPassword(e.target.value)}
-          placeholder={"Password"}
-          classN={"input"}
-        />
-      </form>
-      <div>
-        <Button
-          text={"Criar conta"}
-          classN={"button"}
-          handleClick={() => navigate('/login/signup')}
-          type="button"
-        />
-        <Button
-          text={"Entrar"}
-          classN={"button"}
-          handleClick={() => handleLogin()}
-          type="button"
-        />
+    <div className="login">
+      <div className="login-div">
+        <form>
+          <Input
+            type={"email"}
+            handleChange={(e) => setEmail(e.target.value)}
+            placeholder={"Email"}
+            classN={"input"}
+          />
+          <Input
+            type={"password"}
+            handleChange={(e) => setPassword(e.target.value)}
+            placeholder={"Password"}
+            classN={"input"}
+          />
+        </form>
+        <div className="btns">
+          <Button
+            text={"Criar conta"}
+            classN={"button"}
+            handleClick={() => navigate('/signup')}
+            type="button"
+          />
+          <Button
+            text={"Entrar"}
+            classN={"button"}
+            handleClick={() => handleLogin()}
+            type="button"
+          />
+        </div>
       </div>
-    </>
+      <div className="img-login">
+      </div>
+    </div>
   )
 }
 
