@@ -30,7 +30,7 @@ const ProductCard = ({ _id, name, description, price, stock, img_url, createdAt,
   }
 
   return(
-    <section>
+    <section className='product-card'>
       <img src={img_url} alt={`${name} image`} />
       <h4>{name}</h4>
       <p>{description}</p>

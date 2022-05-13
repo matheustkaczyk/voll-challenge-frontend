@@ -14,7 +14,7 @@ const Home = () => {
     setProducts,
     productsFilter,
   } = useContext(AppContext);
-  
+
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
 
@@ -50,7 +50,7 @@ const Home = () => {
   }, []);
 
   return(
-    <main>
+    <section>
       <Header
         name={loggedUserInfo.name}
         balance={loggedUserInfo.balance}
@@ -59,7 +59,7 @@ const Home = () => {
         email={loggedUserInfo.email}
         role={loggedUserInfo.role}
       />
-      <>
+      <div className='products-section'>
         { products.length > 0 && products.filter((item) => item.name.includes(productsFilter)).map((product) => {
           return <ProductCard
             key={product.name}
@@ -73,8 +73,8 @@ const Home = () => {
             updatedAt={product.updatedAt}
           /> })
         }
-      </>
-    </main>
+      </div>
+    </section>
   )
 }
 

@@ -81,5 +81,27 @@ header {
       text-transform: capitalize;
     }
   }
+}
 
+.products-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 30em;
+    margin-top: 2%;
+
+    img {
+      width: 10em;
+      height: auto;
+    }
+  }
 }
