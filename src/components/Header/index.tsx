@@ -29,6 +29,10 @@ const Header = ({ name, balance, role }: userInfo) => {
       return navigate("/signin");
     }
 
+    if (loggedUserInfo.balance < cartProducts.reduce((acc, curr) => acc + curr.price, 0)) {
+      return alert("Você não tem pontos suficientes para efetuar a compra!");
+    }
+
     const request = await httpRequest()
     .post('/sale', { products: cartProducts, user: loggedUserInfo }, { headers: { Authorization: token } });
 
@@ -66,14 +70,16 @@ const Header = ({ name, balance, role }: userInfo) => {
       </div>
       {
         checkout && 
-        <aside>
-          <h2>Checkout</h2>
-          <h2>Total: {cartProducts.reduce((acc, item) => acc + (item.quantity * item.price), 0)}</h2>
+        <aside className="checkout">
+          <div className="checkout-total">
+            <h2>Checkout</h2>
+            <h2>Total: {cartProducts.reduce((acc, item) => acc + (item.quantity * item.price), 0)}</h2>
+          </div>
           { cartProducts.length > 0 && cartProducts.map(item => {
-            return <div key={item.name}>
+            return <div key={item.name} className="cart-item">
               <h4>{item.name}</h4>
-              <h5>{item.price}</h5>
-              <h5>{item.quantity}</h5>
+              <h5>Preço: {item.price}</h5>
+              <h5>Quantidade: {item.quantity}</h5>
             </div>
           })
           }
