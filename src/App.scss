@@ -11,10 +11,21 @@ header {
     justify-content: space-around;
     align-items: center;
 
+    .cart {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      svg {
+        width: 3em;
+        height: auto;
+        margin-right: 15%;
+      }
+    }
+
     img {
-      width: 5%;
+      width: 4em;
       height: auto;
-      margin-right: 10px;
     }
 
     input {

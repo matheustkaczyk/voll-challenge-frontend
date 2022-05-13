@@ -4,7 +4,8 @@ import AppContext, { userInfo } from "../../context/appContext";
 import httpRequest from "../../utils/httpRequest";
 import Button from "../Button";
 import Input from "../Input";
-import ProductCard from "../ProductCard";
+
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 import coin from '../../coin.svg';
 
 const Header = ({ name, balance, role }: userInfo) => {
@@ -48,7 +49,7 @@ const Header = ({ name, balance, role }: userInfo) => {
           classN="search"
           handleChange={(e) => setProductsFilter(e.target.value)}
           />
-        <h2 className="cart" onClick={() => handleOpen()}>Carrinho: {cartProducts.length}</h2>
+        <h2 className="cart" onClick={() => handleOpen()}><AiOutlineShoppingCart className="cart" /> {cartProducts.length}</h2>
       </div>
       <div>
         <h2>{name}</h2>
