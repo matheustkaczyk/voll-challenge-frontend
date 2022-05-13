@@ -14,6 +14,7 @@ const Home = () => {
     setProducts,
     productsFilter,
   } = useContext(AppContext);
+  
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
 

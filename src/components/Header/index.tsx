@@ -5,10 +5,12 @@ import httpRequest from "../../utils/httpRequest";
 import Button from "../Button";
 import Input from "../Input";
 import ProductCard from "../ProductCard";
+import coin from '../../coin.svg';
 
 const Header = ({ name, balance, role }: userInfo) => {
   const { cartProducts, loggedUserInfo, setProductsFilter } = useContext(AppContext);
   const [checkout, setCheckout] = useState(false);
+
   const navigate = useNavigate();
 
   const token = localStorage.getItem("token");
@@ -38,18 +40,21 @@ const Header = ({ name, balance, role }: userInfo) => {
 
   return(
     <header>
+      <div className="search-cart">
+        <img src={coin} alt="coin-logo" />
+        <Input
+          type="text"
+          placeholder="Buscar produto"
+          classN="search"
+          handleChange={(e) => setProductsFilter(e.target.value)}
+          />
+        <h2 className="cart" onClick={() => handleOpen()}>Carrinho: {cartProducts.length}</h2>
+      </div>
       <div>
         <h2>{name}</h2>
         <h2>Pontos: {balance}</h2>
         { role === 'admin' && <h2 className="admin" onClick={() => handleRedirect()}>Gerenciar</h2> }
       </div>
-      <Input
-        type="text"
-        placeholder="Buscar produto"
-        classN="search"
-        handleChange={(e) => setProductsFilter(e.target.value)}
-      />
-      <h2 className="cart" onClick={() => handleOpen()}>Carrinho: {cartProducts.length}</h2>
       {
         checkout && 
         <aside>
