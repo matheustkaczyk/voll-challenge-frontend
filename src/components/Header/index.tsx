@@ -5,7 +5,7 @@ import httpRequest from "../../utils/httpRequest";
 import Button from "../Button";
 import Input from "../Input";
 
-import { AiOutlineShoppingCart, AiOutlineUser } from 'react-icons/ai';
+import { AiOutlineShoppingCart, AiOutlineUser, AiOutlineLogout } from 'react-icons/ai';
 import coin from '../../coin.svg';
 
 const Header = ({ name, balance, role }: userInfo) => {
@@ -39,6 +39,11 @@ const Header = ({ name, balance, role }: userInfo) => {
     }
   }
 
+  const handleLogout = async () => {
+    localStorage.removeItem("token");
+    return navigate("/signin");
+  }
+
   return(
     <header>
       <div className="search-cart">
@@ -49,7 +54,8 @@ const Header = ({ name, balance, role }: userInfo) => {
           classN="search"
           handleChange={(e) => setProductsFilter(e.target.value)}
           />
-        <h2 className="cart" onClick={() => handleOpen()}><AiOutlineShoppingCart className="cart" /> {cartProducts.length}</h2>
+        <h2 className="cart" onClick={() => handleOpen()}><AiOutlineShoppingCart /> {cartProducts.length}</h2>
+        <AiOutlineLogout className="logout" onClick={() => handleLogout()} />
       </div>
       <div className="header-infos">
         <h2 className="name"><AiOutlineUser />{name}</h2>
