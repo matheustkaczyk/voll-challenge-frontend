@@ -15,6 +15,7 @@ header {
       display: flex;
       flex-direction: row;
       align-items: center;
+      cursor: pointer;
 
       svg {
         width: 3em;
@@ -36,20 +37,43 @@ header {
     }
   }
 
-  div {
+  .header-infos {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    .name {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      svg {
+        width: 2em;
+        height: auto;
+      }
+    }
+
+    .points:hover {
+      color: #FCD116;
+
+      span {
+        color: white;
+      }
+    }
+
+
+    .admin {
+      cursor: pointer;
+    }
+
+    .admin:hover {
+      color: #FCD116;
+    }
+
+    h2 {
+      text-transform: capitalize;
+    }
   }
 
-  .admin {
-    cursor: pointer;
-  }
-
-  .admin:hover {
-    color: rgb(209, 165, 82);
-  }
-
-  h2 {
-    text-transform: capitalize;
-  }
 }

@@ -5,7 +5,7 @@ import httpRequest from "../../utils/httpRequest";
 import Button from "../Button";
 import Input from "../Input";
 
-import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { AiOutlineShoppingCart, AiOutlineUser } from 'react-icons/ai';
 import coin from '../../coin.svg';
 
 const Header = ({ name, balance, role }: userInfo) => {
@@ -51,9 +51,9 @@ const Header = ({ name, balance, role }: userInfo) => {
           />
         <h2 className="cart" onClick={() => handleOpen()}><AiOutlineShoppingCart className="cart" /> {cartProducts.length}</h2>
       </div>
-      <div>
-        <h2>{name}</h2>
-        <h2>Pontos: {balance}</h2>
+      <div className="header-infos">
+        <h2 className="name"><AiOutlineUser />{name}</h2>
+        <h2 className="points"><span>Pontos:</span> {balance}</h2>
         { role === 'admin' && <h2 className="admin" onClick={() => handleRedirect()}>Gerenciar</h2> }
       </div>
       {

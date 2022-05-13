@@ -110,12 +110,14 @@ const Manager = () => {
                   placeholder="Quantidade em estoque"
                   handleChange={(e) => setNewProduct({ ...newProduct, stock: Number(e.target.value) })}
                   classN="input"
+                  min={1}
                 />
                 <Input
                   type="number"
                   placeholder="Preço"
                   handleChange={(e) => setNewProduct({ ...newProduct, price: Number(e.target.value) })}
                   classN="input"
+                  min={1}
                 />
                 <Button
                   type="button"
