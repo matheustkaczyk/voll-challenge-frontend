@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import AppContext, { productsInfo, userInfo } from '../../context/appContext';
+import AppContext, { userInfo } from '../../context/appContext';
 
 import Button from '../../components/Button';
 import Input from '../../components/Input';
@@ -46,6 +46,10 @@ const Manager = () => {
       return navigate('/signin');
     }
 
+    if (newProduct.description === '' || newProduct.img_url === '' || newProduct.name === '' || newProduct.price === 0 || newProduct.stock === 0) {
+      return alert('Todos os campos devem ser preenchidos!');
+    }
+
     const request = await httpRequest()
     .post('/products', newProduct, { headers: { Authorization: token } });
 
@@ -57,15 +61,15 @@ const Manager = () => {
   }
 
   return(
-    <main>
+    <main className='manager'>
       <header>
-        <h3>Painel de administrador</h3>
-        <h3>{loggedUserInfo.name}</h3>
+        <h3>Painel do administrador</h3>
+        <h3>Administrador: {loggedUserInfo.name}</h3>
       </header>
-      <div>
-        <section>
-          <h4>Moedas</h4>
-          <div>
+      <div className='manager-main'>
+        <section className='manager-coins'>
+          <h4>Usuários</h4>
+          <div className='user-wrapper'>
             {
             users.length > 0 && users.map((user) => {
               return <UserCard
@@ -81,12 +85,10 @@ const Manager = () => {
             }
           </div>
         </section>
-        <section>
-          <h4>Produtos</h4>
+        <section className='manager-products'>
           <div>
-            <label>
-              Adicionar produtos
               <form>
+                <h3>Adicionar um novo produto</h3>
                 <Input
                   type="text"
                   placeholder="Nome do produto"
@@ -126,7 +128,6 @@ const Manager = () => {
                   text="Adicionar"
                 />
               </form>
-            </label>
           </div>
         </section>
       </div>

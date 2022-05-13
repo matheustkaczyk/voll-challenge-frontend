@@ -37,17 +37,18 @@ const UserCard = ({ _id, name, email, balance, role }: userInfo) => {
   }
 
   return(
-    <>
+    <div className='user-card'>
       <section>
-        <h5>{_id}</h5>
-        <h4>{name}</h4>
-        <p>{email}</p>
-        <p>{balance}</p>
-        <p>{role}</p>
+        <div className='user-info'>
+          <h4>NOME: <span>{name}</span></h4>
+          <h5>ID: <span>{_id}</span></h5>
+          <p>E-MAIL: <span>{email}</span></p>
+          <p>PONTOS: <span>{balance}</span></p>
+          <p>FUNÇÃO: <span>{role}</span></p>
+        </div>
       </section>
-      <div>
-        <label>
           Alterar quantidade de moedas
+      <div>
           <Input
             type="number"
             placeholder="Quantidade de moedas"
@@ -73,9 +74,8 @@ const UserCard = ({ _id, name, email, balance, role }: userInfo) => {
             classN="button"
             handleClick={() => handleRequest()}
           />
-        </label>
       </div>
-    </>
+    </div>
   )
 }
 
