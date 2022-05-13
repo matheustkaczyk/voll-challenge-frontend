@@ -89,6 +89,8 @@ header {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  background-color: #FAFAFB;
+  margin-top: 5%;
 
   .product-card {
     display: flex;
@@ -98,8 +100,27 @@ header {
     width: 30%;
     height: 30em;
     margin-top: 2%;
+    border-radius: 5px;
+    background-color: white;
 
     img {
+      width: 8em;
+      height: auto;
+      margin-top: 2%;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 5%;
+    }
+  }
+
+  .product-card:hover {
+    img {
+      transition: all 0.2s ease-in-out;
       width: 10em;
       height: auto;
     }

@@ -32,24 +32,26 @@ const ProductCard = ({ _id, name, description, price, stock, img_url, createdAt,
   return(
     <section className='product-card'>
       <img src={img_url} alt={`${name} image`} />
-      <h4>{name}</h4>
-      <p>{description}</p>
-      <h3>{price}</h3>
-      <p>{stock === 1 ? `${stock} unidade disponível` : `${stock} unidades disponíveis`}</p>
-      <Input
-        type={"number"}
-        handleChange={(e) => setQuantity(Number(e.target.value))}
-        placeholder={"Quantidade"}
-        classN={"input"}
-        min={1}
-        max={stock}
-      />
-      <Button
-        type={"button"}
-        text={"Adicionar ao carrinho"}
-        handleClick={() => handleBuy()}
-        classN={"button"}
-      />
+      <div>
+        <h4>{name}</h4>
+        <p>{description}</p>
+        <h3>{price}</h3>
+        <p>{stock === 1 ? `${stock} unidade disponível` : `${stock} unidades disponíveis`}</p>
+        <Input
+          type={"number"}
+          handleChange={(e) => setQuantity(Number(e.target.value))}
+          placeholder={"Quantidade"}
+          classN={"input"}
+          min={1}
+          max={stock}
+        />
+        <Button
+          type={"button"}
+          text={"Adicionar ao carrinho"}
+          handleClick={() => handleBuy()}
+          classN={"button"}
+        />
+      </div>
     </section>
   )
 }
