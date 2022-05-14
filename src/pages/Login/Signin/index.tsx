@@ -47,7 +47,7 @@ const Signin = () => {
           <Input
             type={"password"}
             handleChange={(e) => setPassword(e.target.value)}
-            placeholder={"Password"}
+            placeholder={"Senha"}
             classN={"input"}
           />
         </form>

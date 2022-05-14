@@ -47,7 +47,7 @@ const UserCard = ({ _id, name, email, balance, role }: userInfo) => {
           <p>FUNÇÃO: <span>{role}</span></p>
         </div>
       </section>
-          Alterar quantidade de moedas
+          Alterar quantidade de pontos
       <div>
           <Input
             type="number"

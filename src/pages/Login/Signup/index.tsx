@@ -36,7 +36,7 @@ const Signup = () => {
             <Input
               type={"password"}
               handleChange={(e) => setNewUser({ ...newUser, password: e.target.value})}
-              placeholder={"Password"}
+              placeholder={"Senha"}
               classN={"input"}
             />
           </form>
