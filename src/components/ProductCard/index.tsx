@@ -23,7 +23,7 @@ const ProductCard = ({ _id, name, description, price, stock, img_url, createdAt,
     if (index !== -1) {
       cart[index].quantity += quantity;
     } else {
-      cart.push({ ...thisProduct });
+      cart.push({ ...thisProduct, quantity });
     }
 
     setCartProducts(cart);
@@ -34,7 +34,6 @@ const ProductCard = ({ _id, name, description, price, stock, img_url, createdAt,
       <img src={img_url} alt={`${name} image`} />
       <div>
         <h4 className='name'>{name}</h4>
-        {/* <p className='description'>{description}</p> */}
         <h3 className='price'>Pontos: {price}</h3>
         <p className='units'>{stock === 1 ? `${stock} unidade disponível` : `${stock} unidades disponíveis`}</p>
         <div>
