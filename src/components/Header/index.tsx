@@ -33,6 +33,7 @@ const Header = ({ name, balance, role }: userInfo) => {
       return alert("Você não tem pontos suficientes para efetuar a compra!");
     }
 
+    console.log(cartProducts, loggedUserInfo);
     const request = await httpRequest()
     .post('/sale', { products: cartProducts, user: loggedUserInfo }, { headers: { Authorization: token } });
 
