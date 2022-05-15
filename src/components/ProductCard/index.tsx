@@ -18,17 +18,6 @@ const ProductCard = ({ _id, name, description, price, stock, img_url, createdAt,
   });
 
   const handleBuy = () => {
-    // const cart = [...cartProducts];
-    // const index = cart.findIndex(item => item._id === thisProduct._id);
-    // if (index !== -1 && (cart[index].quantity + quantity) < cart[index].stock) {
-    //   cart[index].quantity += quantity;
-    // } else if (index !== -1 && (cart[index].quantity + quantity) > cart[index].stock) {
-    //   cart[index].quantity = cart[index].stock
-    // } else {
-    //   cart.push({ ...thisProduct, quantity });
-    // }
-
-    // setCartProducts(cart);
     const cart = [...cartProducts];
     const index = cart.findIndex(item => item._id === thisProduct._id);
     if (index !== -1) {
