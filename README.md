@@ -22,6 +22,7 @@
 - [Pré Requisitos](#pré-requisitos)
 - [Instalação](#instalação)
 - [Utilização online](#utilização-online)
+- [Próximos passos](#próximos-passos)
 - [Sobre o autor](#sobre-o-autor)
 
 ---
@@ -59,6 +60,12 @@ Para rodar esse projeto é necessário ter instalado em sua máquina o runtime N
  Este site está hospedado na plataforma Netlify, já consumindo uma api, para testa-lo sem instalar nada em seu computador acesse esse link:
  **`https://vollcoinstore.netlify.app/`**
  Se a aplicação der algum tipo de erro, aguarde um pouco e tente novamente, ambos Netlify e Heroku deixam a aplicação "desativada" quando fica há algum tempo sem requisições.
+ 
+ ## **Próximos passos**
+1. Criar o frontend para todas as rotas já criadas na API: **`https://vollcoinstoreback.herokuapp.com/docs`**
+2. Melhorar lógica do carrinho de compras, adicionar lógica para remover itens do carrinho.
+3. Melhorar a responsividade
+4. Mobile
 
 ---
 
