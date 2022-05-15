@@ -21,6 +21,7 @@
 
 - [Pré Requisitos](#pré-requisitos)
 - [Instalação](#instalação)
+- [Utilização online](#utilização-online)
 - [Sobre o autor](#sobre-o-autor)
 
 ---
@@ -53,7 +54,7 @@ Para rodar esse projeto é necessário ter instalado em sua máquina o runtime N
     ```
     baseURL: 'https://vollcoinstoreback.herokuapp.com',
     ```
- ## Utilização online
+ ## **Utilização online**
  
  Este site está hospedado na plataforma Netlify, já consumindo uma api, para testa-lo sem instalar nada em seu computador acesse esse link:
  **`https://vollcoinstore.netlify.app/`**
