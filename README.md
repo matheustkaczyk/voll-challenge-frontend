@@ -21,8 +21,6 @@
 
 - [Pré Requisitos](#pré-requisitos)
 - [Instalação](#instalação)
-- [Contexto e Regras de Negócio](#contexto-e-regras-de-negócio)
-- [Rotas | Endpoints](#rotas-|-endpoints)
 - [Sobre o autor](#sobre-o-autor)
 
 ---
