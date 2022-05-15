@@ -58,7 +58,7 @@ Para rodar esse projeto é necessário ter instalado em sua máquina o runtime N
  
  Este site está hospedado na plataforma Netlify, já consumindo uma api, para testa-lo sem instalar nada em seu computador acesse esse link:
  **`https://vollcoinstore.netlify.app/`**
- Se a aplicação der algum tipo de erro, aguarde um pouco e tente novamente, ambos Netlify e Heroku deixam a aplicação em "desativada" quando fica há algum tempo sem requisições.
+ Se a aplicação der algum tipo de erro, aguarde um pouco e tente novamente, ambos Netlify e Heroku deixam a aplicação "desativada" quando fica há algum tempo sem requisições.
 
 ---
 
